@@ -3,11 +3,15 @@ window.App = Ember.Application.create({
 });
 
 App.Router.map(function(){
-    this.route('world');
+    this.resource('world', function(){
+        this.route('withstate',{path: '/*splat'});
+    });
 });
 
-App.Router.reopen({
-    location: 'history'
+App.WorldWithstateRoute = Ember.Route.extend({
+    model: function(params){
+        return params;
+    }
 });
 
 App.BackboneView = Ember.View.extend({

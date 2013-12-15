@@ -15,7 +15,12 @@
 
     <script type="text/x-handlebars" data-template-name="world">
         <div>world!</div>
+        {{outlet}}
         {{view App.BackboneView}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="world/withstate">
+        {{splat}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="backbone">
